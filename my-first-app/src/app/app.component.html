@@ -1,11 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to the {{ title }} - {{ name }}
-  </h1>
-</div>
-<div> 
-  <input type="text" placeholder="Type your name here" [(ngModel)] = "name"/>
-  <p>{{ name }}</p>
+
+<div class="container">
+  <div class = "row">
+    <h3>Hi, {{ name }}
+      <div> 
+        <input type="text" placeholder="Type your name here" [(ngModel)] = "name"/>
+      </div>
+    </h3>
+    <hr>
+    <div style="text-align:center">
+      <h1>
+        Welcome to the {{ title }} - {{ name }}
+      </h1>
+    </div>
+    <hr>
+    <!-- element as selector -->
+    <app-servers></app-servers>
+
+    <!-- alternative to default selector would be class name -->
+    <!-- <div class = "app-servers"></div> -->
+  </div>
 </div>
 

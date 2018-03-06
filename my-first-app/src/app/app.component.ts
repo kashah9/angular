@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { StylesCompileDependency } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html', // Only single template allowed. 
+  // template: '<app-servers></app-servers>',
+
+  // styleUrls: ['./app.component.css'] // Array of css files, add mutiple css files in here. 
+
+
+  styles: [` 
+  h1 {
+    color: red;
+  }`]
+
 })
 export class AppComponent {
-  title = 'angular demo';
+  title = 'Angular class';
 }
