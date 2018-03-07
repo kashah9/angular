@@ -8,7 +8,7 @@ import { StylesCompileDependency } from '@angular/compiler';
 
   // styleUrls: ['./app.component.css'] // Array of css files, add mutiple css files in here. 
 
-
+  // Following css styling overrides  
   styles: [` 
   h1 {
     color: red;
