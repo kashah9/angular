@@ -1,2 +1,9 @@
+<button
+[disabled]="!allowNewServer" 
+class="btn btn-primary"
+(click) = "onCreateServer()">Add Server</button>
+<p>{{allowNewServer}}</p>
+<p>{{serverCreation}}</p>
+<!-- disabled in brackets indicates property binding -->
 <h1>Server Component</h1>
 <h3>Server ID is {{ serverID }} with status of server {{ getSeverStatus() }}</h3>
