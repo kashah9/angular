@@ -1,0 +1,4 @@
+<input type="text" class="form-control" placeholder="" [(ngModel)]="Username">
+<button class="btn btn-primary" [disabled]="Username === ' '"
+(click) = "onButtonClick()">Click Me</button>
+<p>{{Username}}</p>

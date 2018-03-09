@@ -6,4 +6,26 @@ class="btn btn-primary"
 <p>{{serverCreation}}</p>
 <!-- disabled in brackets indicates property binding -->
 <h1>Server Component</h1>
-<h3>Server ID is {{ serverID }} with status of server {{ getSeverStatus() }}</h3>
+
+<!-- ngStyle referred as property, and binds key/value pair that is JS object -->
+<!-- ngStyle dynamically changes css styling -->
+<p 
+    [ngStyle] = "{backgroundColor: getColor()}"
+    [ngClass] = "{online: serverStatus === 'online'}">
+Server ID is {{ serverID }} with status of server {{ getSeverStatus() }}</p>
+<p>{{serverStatus}}</p>
+
+<!-- Event Binding example -->
+<label>Server Name</label>
+<input type="text" class="form-control"
+(input) = "onUpdateServerName($event)">
+
+<h3>{{serverName}}</h3>
+
+<!-- Two way binding of data -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
+<h2>NGIF</h2>
+<p *ngIf="serverCreated; else noServer">Server was created, {{serverName}}</p>
+<ng-template #noServer><p>Server not created from ng-else condition</p></ng-template>
+
