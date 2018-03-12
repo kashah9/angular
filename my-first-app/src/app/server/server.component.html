@@ -1,3 +1,4 @@
+
 <button
 [disabled]="!allowNewServer" 
 class="btn btn-primary"
@@ -16,16 +17,28 @@ Server ID is {{ serverID }} with status of server {{ getSeverStatus() }}</p>
 <p>{{serverStatus}}</p>
 
 <!-- Event Binding example -->
-<label>Server Name</label>
+<label *ngFor = "let server of servers">Server Name</label>
 <input type="text" class="form-control"
 (input) = "onUpdateServerName($event)">
 
 <h3>{{serverName}}</h3>
 
 <!-- Two way binding of data -->
-<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <input type="text" class="form-control" [(ngModel)]="serverName"> -->
 
 <h2>NGIF</h2>
 <p *ngIf="serverCreated; else noServer">Server was created, {{serverName}}</p>
 <ng-template #noServer><p>Server not created from ng-else condition</p></ng-template>
 
+<!-- Button below is to toggle display of content on button click!!!
+<button type="button" 
+class="btn btn-primary"
+id="display"
+(click) = "displayPara = !displayPara">Display Details</button> -->
+
+<button type="button" class="btn btn-primary" id="display" (click)="onToggleDetails()">
+    Display Details</button>
+
+<p *ngIf = "displayPara" id="contentPara">This para displays details!!!</p>
+<div *ngFor = "let logItem of log"
+    [ngStyle] = "{backgroundColor: logItem >= 5 ? 'blue' : 'transparent'}">{{ logItem }}</div>

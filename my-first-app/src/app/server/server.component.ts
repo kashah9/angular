@@ -13,11 +13,14 @@ export class ServerComponent implements OnInit {
     // String interpolation 
     serverID: number = 10;
     serverStatus: string = 'offline';
-    serverName: String = "Default";
+    serverName: string = "Default";
     serverCreated = false;
+    servers = ['TestServer', 'TestServer2'];
     getSeverStatus(){
         return this.serverStatus;
     }
+
+    displayPara = false;
 
     allowNewServer = false;
     serverCreation = "Server not created!";
@@ -34,7 +37,9 @@ export class ServerComponent implements OnInit {
     onCreateServer(){
         this.serverCreation = "server created, yay!"
         this.serverCreated = true;
+        this.servers.push(this.serverName);
     }
+
     // Event binding example
     onUpdateServerName(event: Event) {
         console.log(event);
@@ -46,4 +51,27 @@ export class ServerComponent implements OnInit {
             return 'green'; 
         return 'red';
     }
+
+    log = [];
+    currentNumber = 0;
+    onToggleDetails(){
+
+        
+        this.displayPara = !this.displayPara;
+        // this.log.push(this.log.length + 1);
+
+        this.log.push(this.currentNumber + 1);
+        this.currentNumber += 1;
+    }
+
+
+
+    // Alternative solution of onToggleDetails() function
+
+    // currentNumber = 0;
+    // messages = [];
+    // onDisplayDetails(): void {
+    //     this.messages.push(this.currentNumber);
+    //     this.currentNumber += 1;
+    // }
 }
