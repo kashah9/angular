@@ -8,6 +8,10 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { ProfileComponent } from './shared/profile.component'; // Accessing user service to print data
+import { HttpModule } from '@angular/http'; // To handle Http service in Angular 2.0
+import { UserService } from './shared/user.service'; // service provider
+import { HttpClientModule } from '@angular/common/http'; // Angular 4.3.x and above
 
 
 @NgModule({
@@ -19,12 +23,15 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    ProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService], // DO NOT forget to include service provider
   bootstrap: [AppComponent]
 })
 export class AppModule { }
