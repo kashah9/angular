@@ -12,7 +12,9 @@ import { ProfileComponent } from './shared/profile.component'; // Accessing user
 import { HttpModule } from '@angular/http'; // To handle Http service in Angular 2.0
 import { UserService } from './shared/user.service'; // service provider
 import { HttpClientModule } from '@angular/common/http'; // Angular 4.3.x and above
-
+import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { FormComponent } from './shared/form.component';
+import { testformComponent } from './shared/testform.component'
 
 @NgModule({
   declarations: [
@@ -24,12 +26,16 @@ import { HttpClientModule } from '@angular/common/http'; // Angular 4.3.x and ab
     ShoppingListComponent,
     ShoppingEditComponent,
     RecipeDetailComponent,
-    ProfileComponent
+    ProfileComponent,
+    FormComponent, 
+    testformComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UserService], // DO NOT forget to include service provider
   bootstrap: [AppComponent]

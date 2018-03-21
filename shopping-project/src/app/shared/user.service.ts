@@ -8,7 +8,7 @@ interface UserResponse {
     location: string;
     followers: string;
 }
-@Injectable()
+@Injectable() // <= This is called decorator
 export class UserService {
     // Injecting Http service in class constructor
     constructor(private http: Http) {}
